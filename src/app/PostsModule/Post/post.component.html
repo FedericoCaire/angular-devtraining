@@ -1,0 +1,11 @@
+<div class="card">
+  <h3>{{ post().user }}</h3>
+  <small>{{ post().published | date:'short' }}</small>
+  <p>{{ visibleContent() }}</p>
+
+  @if (isLong()) {
+    <button type="button" (click)="toggle()">
+      {{ expanded() ? 'View less' : 'View more' }}
+    </button>
+  }
+</div>
