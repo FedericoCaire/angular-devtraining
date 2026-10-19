@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Post, POSTS} from '../../data';
+import {Component, inject} from '@angular/core';
+import { PostService } from '../posts.service';
 
 @Component({
   selector: 'app-post-list',
@@ -8,5 +8,6 @@ import {Post, POSTS} from '../../data';
   styleUrls: ['./postList.component.css'],
 })
 export class PostListComponent {
-  posts: Post[] = POSTS;
+  private postService = inject(PostService);
+  posts$ = this.postService.getAllPost();
 }

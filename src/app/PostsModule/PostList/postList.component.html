@@ -1,3 +1,3 @@
-@for (p of posts; track $index) {
+@for (p of posts$ | async; track $index) {
   <app-post [post]="p" />
 }

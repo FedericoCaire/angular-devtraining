@@ -1,10 +1,12 @@
 import { Component, computed, input, signal } from '@angular/core';
 import {Post} from '../../data';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 
 @Component({
   selector: 'app-post',
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
 })
