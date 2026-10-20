@@ -9,5 +9,9 @@ import { PostService } from '../posts.service';
 })
 export class PostListComponent {
   private postService = inject(PostService);
-  posts$ = this.postService.getAllPost();
+  posts$ = this.postService.posts$;
+
+  constructor() {
+    this.postService.loadPosts();
+  }
 }

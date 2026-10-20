@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="user" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Fecha de publicación</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="published" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker" />
+        <mat-datepicker #picker />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Contenido</mat-label>
+        <textarea matInput formControlName="content"></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">
+        {{ post ? 'Guardar' : 'Crear' }}
+      </button>
+    </form>
