@@ -1,8 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { Post } from '../../data';
 
-export const appInitialized = createAction('[App] app initialized');
-
 export const refreshButtonClicked = createAction(
   '[Post list] refresh button clicked'
 );

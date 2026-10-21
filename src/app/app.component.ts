@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { appInitialized } from './PostsModule/state/posts.actions';
+import { appInitialized } from './state/app.actions';
 import { getPostsCount } from './PostsModule/state/posts.selector';
 
 @Component({

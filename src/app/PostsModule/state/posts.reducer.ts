@@ -1,12 +1,12 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import { Post } from '../../data';
 import {
-  appInitialized,
   loadPostsSuccess,
   loadPostsFailure,
   postSubmitted,
   refreshButtonClicked
 } from './posts.actions';
+import { appInitialized } from '../../state/app.actions';
 
 export const POSTS_STATE_KEY = 'posts';
 

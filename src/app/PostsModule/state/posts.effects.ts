@@ -4,11 +4,11 @@ import { of } from 'rxjs';
 import { catchError, delay, map, switchMap } from 'rxjs/operators';
 import { PostsService } from '../posts.service';
 import {
-  appInitialized,
   loadPostsFailure,
   loadPostsSuccess,
   refreshButtonClicked
 } from './posts.actions';
+import { appInitialized } from '../../state/app.actions';
 
 @Injectable()
 export class PostsEffects {
