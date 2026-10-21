@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PostListComponent } from './PostList/postList.component';
 import { PostComponent } from './Post/post.component';
 import { PostFormComponent } from './PostForm/postForm.component';
+import { PostCreateComponent } from './PostCreate/postCreate.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +18,6 @@ import { PostsRoutingModule } from './posts-routing.module';
     MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule],
   exports: [PostComponent, PostListComponent, PostFormComponent],
   providers: [provideNativeDateAdapter()],
-  declarations: [PostComponent, PostListComponent, PostFormComponent],
+  declarations: [PostComponent, PostListComponent, PostFormComponent, PostCreateComponent],
 })
 export class PostsModule {}

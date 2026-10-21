@@ -1,8 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from '../../data';
-import { Router } from '@angular/router';
-import { PostService } from '../posts.service';
 
 @Component({
   selector: 'app-post-form',
@@ -29,19 +27,8 @@ export class PostFormComponent implements OnInit {
     }
   }
 
-  private postService = inject(PostService);
-  private router = inject(Router);
-
   onSubmit(): void {
-    console.log('submit', this.form.value, this.form.valid);
-    const { user, published, content } = this.form.value;
-    const nuevoPost: Post = { user: user!, published: published!, content: content! };
-
-    if (this.post) {
-      this.postService.updatePost(this.post, nuevoPost);
-    } else {
-      this.postService.addPost(nuevoPost);
-      this.router.navigate(['/posts/list']);
-    }
+    const { user, published, content } = this.form.getRawValue();
+    this.save.emit({ user: user!, published: published!, content: content! });
   }
 }

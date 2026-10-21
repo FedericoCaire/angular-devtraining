@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PostListComponent } from './PostList/postList.component';
-import { PostFormComponent } from './PostForm/postForm.component';
+import { PostCreateComponent } from './PostCreate/postCreate.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: PostFormComponent,
+    component: PostCreateComponent,
   },
   {
     path: '',
