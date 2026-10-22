@@ -1,6 +1,5 @@
 import {Component, inject} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { getPosts } from '../state/posts.selector';
+import { PostsStore } from '../posts.store';
 
 @Component({
   selector: 'app-post-list',
@@ -9,6 +8,6 @@ import { getPosts } from '../state/posts.selector';
   styleUrls: ['./postList.component.css'],
 })
 export class PostListComponent {
-  private store = inject(Store);
-  posts$ = this.store.select(getPosts);
+  private postsStore = inject(PostsStore);
+  posts$ = this.postsStore.posts$;
 }

@@ -1,7 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { appInitialized } from './state/app.actions';
-import { getPostsCount } from './PostsModule/state/posts.selector';
+import { PostsStore } from './PostsModule/posts.store';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +8,11 @@ import { getPostsCount } from './PostsModule/state/posts.selector';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  private store = inject(Store);
+  private postsStore = inject(PostsStore);
   title = 'angular-practice';
-  postsCount$ = this.store.select(getPostsCount);
+  postsCount$ = this.postsStore.count$;
 
   constructor() {
-    this.store.dispatch(appInitialized());
+    this.postsStore.loadPosts();
   }
 }
